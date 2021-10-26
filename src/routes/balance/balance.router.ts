@@ -1,8 +1,7 @@
-// @ts-ignore
-import {Router} from "express";
+import {Router} from 'express';
 
 const router = Router();
 
-router.post('/')
+router.post('/');
 
-export const tokenRouter = router;
+export const balanceRouter = router;
