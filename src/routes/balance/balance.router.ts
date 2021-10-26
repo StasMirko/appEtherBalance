@@ -1,0 +1,8 @@
+// @ts-ignore
+import {Router} from "express";
+
+const router = Router();
+
+router.post('/')
+
+export const tokenRouter = router;
