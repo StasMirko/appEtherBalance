@@ -1,8 +1,8 @@
 import {NextFunction, Request, Response} from 'express';
 
-import * as express from 'express';
+import express from 'express';
 import * as dotenv from 'dotenv';
-import * as morgan from 'morgan';
+import  morgan from 'morgan';
 import {ResponseStatusCodesEnum} from './constants';
 import {balanceRouter} from './routes';
 
