@@ -1,12 +1,14 @@
 import Web3 from 'web3';
+import {config} from '../config';
+import {UnitEnum} from '../constants';
 
 class Web3Service {
   public async getBalance(): Promise<string> {
-    const web3 = new Web3('https://mainnet.infura.io/v3/b2f2012b94fd45869feb6f154583572b');
+    const web3 = new Web3(config.PROVIDER);
 
-    const balance = await web3.eth.getBalance('0xA145ac099E3d2e9781C9c848249E2e6b256b030D');
+    const balance = await web3.eth.getBalance(config.WALLET_ADDRESS);
 
-    return web3.utils.fromWei(balance, 'ether');
+    return web3.utils.fromWei(balance, UnitEnum.ETHER);
   }
 }
 
