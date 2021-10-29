@@ -1,7 +1,8 @@
 import {Router} from 'express';
+import {balanceController} from '../../controllers';
 
 const router = Router();
 
-router.post('/');
+router.get('/', balanceController.getAll);
 
 export const balanceRouter = router;
