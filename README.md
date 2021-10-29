@@ -1,12 +1,16 @@
-appEtherBalance
+# appEtherBalance
 
+# Project start:
+npm run start
+
+# Description 
 In this project, the balance of all tokens and Ether from the Ethereum blockchain is obtained.
+Cron job writes in database and txt file data balance every minute.
 
-Project start: npm run start
 
-The balance is recorded in the database and file: src\database\dataSheet.txt.
+# Path file with records:
+src\database\dataSheet.txt.
 
-Using the cron job, the operation is repeated every minute.
 
-You can also get already saved balances.
-At the following address: http://localhost:5000/balance
+# Get all records: 
+http://localhost:5000/balance

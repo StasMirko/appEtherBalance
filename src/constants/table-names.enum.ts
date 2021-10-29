@@ -1,3 +1,3 @@
 export enum TableNamesEnum {
-  BALANCE_HISTORY = 'balanceHistory'
+  BALANCE_HISTORY = 'balanceHistory',
 }

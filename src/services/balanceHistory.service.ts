@@ -1,12 +1,12 @@
 import * as Joi from 'joi';
-import {BalanceHistoryModel} from '../database';
-import {IBalanceHistory} from '../models';
-import {balanceValidator} from '../validators';
+import { BalanceHistoryModel } from '../database';
+import { IBalanceHistory } from '../interfaces';
+import { balanceValidator } from '../validators';
 
 class BalanceHistoryService {
-  create(walletData: Partial<IBalanceHistory>): Promise<IBalanceHistory>{
+  create(walletData: Partial<IBalanceHistory>): Promise<IBalanceHistory> {
 
-    const {error} = Joi.validate(walletData, balanceValidator);
+    const { error } = Joi.validate(walletData, balanceValidator);
 
     if (error) {
       throw new Error(error.details[0].message);
@@ -17,7 +17,7 @@ class BalanceHistoryService {
     return balanceHistory.save();
   }
 
-  getAllRecords(): Promise<IBalanceHistory | null> {
+  getAllRecords(): Promise<IBalanceHistory[] | null> {
     return BalanceHistoryModel.find({}) as any;
   }
 }

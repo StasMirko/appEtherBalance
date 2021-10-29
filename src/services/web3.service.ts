@@ -1,6 +1,6 @@
 import Web3 from 'web3';
-import {config} from '../config';
-import {UnitEnum} from '../constants';
+import { config } from '../config';
+import { UnitEnum } from '../constants';
 
 class Web3Service {
   public async getBalance(): Promise<string> {
