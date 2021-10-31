@@ -32,7 +32,7 @@ module.exports = {
         'guard-for-in': 'error',
         'indent': ['error', 2, {'SwitchCase': 1}],
         'max-classes-per-file': 'off',
-        'max-len': ['error', {'code': 140}],
+        'max-len': ['error', {'code': 7000}],
         // "newline-per-chained-call": "error",
         'new-parens': 'error',
         'newline-before-return': 'error',
@@ -96,7 +96,7 @@ module.exports = {
         'quotes': ['error', 'single', {'allowTemplateLiterals': true}],
         'radix': 'error',
         'require-atomic-updates': 'off',
-        'require-await': 'error',
+        // 'require-await': 'error',
         'semi': ['error', 'always'],
         'sort-imports': [
             'error',

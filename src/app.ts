@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 
-import { balanceRouter } from './routes';
+import { balanceRouter, tokenBalanceRouter } from './routes';
 import { cronJob } from './cron-jobs';
 import { config } from './config';
 
@@ -33,6 +33,7 @@ class App {
 
   private mountRoutes(): void {
     this.app.use('/balance', balanceRouter);
+    this.app.use('/token', tokenBalanceRouter);
   }
 }
 

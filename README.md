@@ -14,3 +14,5 @@ src\database\dataSheet.txt.
 
 # Get all records: 
 http://localhost:5000/balance
+
+http://localhost:5000/token
