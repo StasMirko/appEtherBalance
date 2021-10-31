@@ -1,33 +1,24 @@
 import { appendFile } from 'fs';
 import { join } from 'path';
+import { IWriteTokenBalance } from '../interfaces';
 import { config } from '../config';
 
 class FileService {
   async writeEtherBalance(balance: string): Promise<void> {
-
     appendFile(join(`${process.cwd()}`, config.TXT_FILE_PATH), `Ether balance: ${balance} \n`, (err) => {
-      if (err){
-        console.log(err);
-      }
+      if (err) {console.log(err);}
     });
   }
 
-  async writeTokenBalance(
-    tokenBalances: string[],
-    tokenName: string[],
-    symbol: string[]
-  ): Promise<void> {
+  async writeTokenBalance(parameters: IWriteTokenBalance): Promise<void> {
+    const { tokenNames, symbols, tokenBalances } = parameters;
 
-    for (let i = 0; i < symbol.length; i++) {
-
+    for (let i = 0; i < symbols.length; i++) {
       appendFile(join(`${process.cwd()}`, config.TXT_FILE_PATH),
-        `Token: ${tokenName[i]}, Symbol: ${symbol[i]}  , Token balance: ${tokenBalances[i]} \n`,
+        `Token: ${tokenNames[i]}, Symbol: ${symbols[i]}  , Token balance: ${tokenBalances[i]} \n`,
         (err) => {
-
-        if (err){
-          console.log(err);
-        }
-      });
+          if (err) {console.log(err);}
+        });
     }
   }
 }

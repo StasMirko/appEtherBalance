@@ -22,10 +22,10 @@ export const cronJob = cron.schedule(config.CRON_JOB_PERIOD, async () => {
   if (!balance || !tokenBalances) { throw new Error(errorMassages.BALANCE_IS_NOT_PROVIDED); }
 
   await fileService.writeEtherBalance(balance);
-  await fileService.writeTokenBalance(tokenBalances, tokenNames, symbols);
+  await fileService.writeTokenBalance({ tokenBalances, tokenNames, symbols });
   await balanceHistoryService.create({ balance, walletAddress: config.WALLET_ADDRESS });
 
   for (let i = 0; i < tokenData.length; i++) {
-    await tokenBalanceHistoryService.create({...tokenData[i], tokenBalance : tokenBalances[i]});
+    await tokenBalanceHistoryService.create({ ...tokenData[i], tokenBalance : tokenBalances[i] });
   }
 });

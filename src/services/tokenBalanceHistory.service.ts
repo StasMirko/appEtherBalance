@@ -5,12 +5,9 @@ import { tokenValidator } from '../validators';
 
 class TokenBalanceHistoryService {
   create(tokenData: Partial<ITokenBalanceHistory>): Promise<ITokenBalanceHistory> {
-
     const { error } = Joi.validate(tokenData, tokenValidator);
 
-    if (error) {
-      throw new Error(error.details[0].message);
-    }
+    if (error) {throw new Error(error.details[0].message);}
 
     const tokenBalanceHistory = new TokenBalanceHistoryModel(tokenData);
 
